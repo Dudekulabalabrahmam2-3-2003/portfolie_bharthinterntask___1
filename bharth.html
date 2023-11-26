@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/web.css">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            max-height: 100vh;
+        }
+
+        /*nav */
+        header {
+            padding: 1.7rem 1rem;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            max-width: 80%;
+            margin: auto;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .logo a {
+            color: #244D61;
+            text-decoration: none;
+        }
+
+        nav a {
+            color: #244D61;
+            text-decoration: none;
+            font-size: .97rem;
+            font-weight: 600;
+            letter-spacing: .7px;
+            padding: 1rem;
+            padding: 0.4rem 1rem;
+        }
+
+        nav a.active,
+        nav a:hover {
+            background-color: #244D61;
+            color: #fff;
+            border-radius: 1rem;
+            transition: all.3s ease-in-out;
+        }
+
+        #click {
+            display: none;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        /* Nav */
+
+        section {
+            margin: 2rem 8.5rem;
+        }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5rem auto;
+        }
+
+        .main h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .main p {
+            margin-top: 1rem;
+            font-size: .98rem;
+        }
+
+        .social {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.4rem;
+            margin-top: 1.7rem;
+        }
+
+        .social a {
+            color: #244D61;
+            font-size: 1rem;
+            border: 1.6px solid #244D61;
+            border-radius: 50%;
+            padding: .35rem;
+            text-align: center;
+            width: 26px;
+        }
+
+        .social a:hover {
+            color: #fff;
+            background-color: #244D61;
+            transition: all .3s ease-in-out;
+        }
+
+        .main h1 span:nth-child(1) {
+            font-size: 1.5rem;
+        }
+
+        .images {
+            background-image: url(/img/graph3.png);
+            background-repeat: no-repeat;
+            background-position: 0 -75px;
+        }
+
+        @media only screen and (max-width:480px) {
+            .menu {
+                display: block;
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #244D61;
+            }
+
+            header {
+                padding: 0.7rem 1rem;
+                align-items: center;
+                max-width: 100%;
+            }
+
+            #skills {
+                margin: 2rem 0;
+            }
+
+
+            .skills-container {
+                display: flex;
+                justify-content: space-around;
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .skill {
+                text-align: center;
+                margin: 1rem;
+                padding: 1rem;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                width: 200px;
+
+            }
+
+            .skill h3 {
+                margin-bottom: 0.5rem;
+            }
+
+            .skill p {
+                font-size: 0.9rem;
+                color: #555;
+            }
+
+            nav {
+                position: absolute;
+                display: grid;
+                top: 75px;
+                width: calc(100% - 40px);
+                text-align: center;
+                background-color: #fff;
+                left: -100%;
+            }
+
+            #click:checked~nav {
+                left: 0%;
+                transition: all 0.3s ease;
+            }
+
+            #portfolio {
+                margin: 2rem 0;
+            }
+
+            .project {
+                margin-bottom: 2rem;
+                padding: 1rem;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+            }
+
+            .project img {
+                max-width: 100%;
+                border-radius: 8px;
+            }
+
+            .project-title {
+                margin-top: 1rem;
+                font-size: 1.2rem;
+                font-weight: bold;
+
+                padding: 10px 20px;
+                background-color: #244D61;
+                color: #fff;
+                text-decoration: none;
+                font-size: 1rem;
+                font-weight: bold;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease-in-out;
+            }
+
+            .project-title:hover {
+                background-color: #1A3D4C;
+            }
+
+            .project-description {
+                margin-top: 0.5rem;
+                font-size: 0.9rem;
+                color: #555;
+            }
+
+            section {
+                margin: 1rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#"></a>
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="mainicon">
+            <div class="menu">
+                <i class="bi bi-list"></i>
+            </div>
+        </label>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="main">
+            <div class="detail">
+                <img src="https://res.cloudinary.com/dpqtmjzja/image/upload/v1691028159/WhatsApp_Image_2023-08-03_at_07.30.35_t9zq8l.jpg" alt="Profile Image" width="150px" style="border-radius: 50%;">
+
+
+                <h1><span>Hi, It's Me</span> <br> I'm <span style="color:#244D61;">Bala Brahmam</span></h1>
+                <p> Hi, I'm Your Bala Brahmam, a passionate computer science engineering student currently in my second
+                    year at Vaagdevi Institute of Technology and Sciences.</br>
+                    </br>
+                    My journey in the world of programming has been exciting, and I've gained proficiency in several
+                    languages, including HTML, CSS, JavaScript, C, and Python.
+                    I've also honed my skills in web development using the Bootstrap framework.
+
+            </div>
+            <div class="images">
+                <img src=" " alt="" width="100%">
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills:</h2>
+        <div class="skill">
+            <h3>HTML:</h3>
+            <p>Proficient in creating structured and semantically correct HTML5 markup. Familiar with HTML best practices.</p>
+        </div>
+        <div class="skill">
+            <h3>CSS:</h3>
+            <p>Skilled in styling web pages using CSS3. Experience with responsive design and CSS frameworks like Bootstrap.</p>
+
+        </div>
+        <div class="skill">
+            <h3>JavaScript:</h3>
+            <p>Knowledgeable in JavaScript programming. Capable of building interactive and dynamic web applications.</p>
+        </div>
+        <!-- Add more skills as needed -->
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2 class="section-heading">Portfolio:</h2>
+
+        <div class="project">
+            <h3>project 1:</h3>
+            <div class="project-details">
+                <h3>Responsive Website Development Certificate</h3>
+                <p>Received a certificate for completing a course in responsive website development using HTML, CSS, and Bootstrap.</p>
+
+                <a href="https://certificates.ccbp.in/academy/static-website?id=LRZMUFAOJV" target="_blank">
+
+                    <button class="project-title ">View certificate</button>
+
+                </a>
+                <div class="project-description">
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <h3>project 2:</h3>
+            <div class="project-details">
+                <h3>GenerativeAI Certificate</h3>
+                Developed a generative AI application during the Generative AI Mega Workshop, showcasing advanced techniques and creativity.</p>
+                <a href="https://cdn1.ccbp.in/misc/gen-ai-completion-cer/I0IJ33O8DT.png" target="_blank">
+
+                    <button class="project-title ">View certificate</button>
+
+                </a>
+
+                <div class="project-description">
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section id="contact" class="contact">
+            <h2>Contact:</h2>
+            <p>Iam Here To Help Has Frontend Developer</p>
+            <div class="social">
+                <a href="https://github.com/Dudekulabalabrahmam2-3-2003" target="_blank"><i class="bi bi-github"></i></a>
+
+
+
+                <a href="https://www.linkedin.com/in/dudekula-balabrahmam" target="_blank"><i class="bi bi-linkedin"></i></a>
+
+                <a href="mailto:balabrahmam418@gmail.com" target="_blank"><i class="bi bi-envelope"></i></a>
+            </div>
+        </section>
+
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+</style>
+
+</html>
